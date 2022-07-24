@@ -2,19 +2,23 @@
 
 using namespace std;
 
-template<typename A, typename B> ostream& operator<<(ostream &os, const pair<A, B> &p) {
+template<typename A, typename B> ostream& operator<<(ostream &os, const pair<A, B> &p)
+{
 	return os << '(' << p.first << ", " << p.second << ')';
 }
-template<typename T_container, typename T = typename enable_if<!is_same<T_container, string>::value, typename T_container::value_type>::type> ostream& operator<<(ostream &os, const T_container &v) {
+template<typename T_container, typename T = typename enable_if<!is_same<T_container, string>::value, typename T_container::value_type>::type> ostream& operator<<(ostream &os, const T_container &v)
+{
 	os << '{';
 	string sep;
 	for (const T &x : v) os << sep << x, sep = ", ";
 	return os << '}';
 }
-void dbg_out() {
+void dbg_out()
+{
 	cerr << endl;
 }
-template<typename Head, typename... Tail> void dbg_out(Head H, Tail... T) {
+template<typename Head, typename... Tail> void dbg_out(Head H, Tail... T)
+{
 	cerr << ' ' << H;
 	dbg_out(T...);
 }
@@ -37,11 +41,13 @@ const ld EPS = 1e-9;
 
 
 
-void solve() {
+void solve()
+{
 
 }
 
-int main() {
+int main()
+{
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
